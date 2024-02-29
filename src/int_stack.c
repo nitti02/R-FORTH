@@ -1,4 +1,4 @@
-#include "int_stack.h"
+#include "int_stack.c"
 #include <stdlib.h>
 #include <stdio.h>
 
