@@ -1,26 +1,24 @@
 #ifndef TOKEN_H
 #define TOKEN_H
 
-#include <stdio.h> 
-
-
-enum token_type_t {
+// Define token types
+typedef enum {
     NUMBER,
-    OPERATOR,
-    SYMBOL,
-    WORD
-};
+    ADDITION,
+    SUBTRACTION,
+    MULTIPLICATION,
+    DIVISION,
+    WORD // Placeholder for words (e.g., function names)
+} token_type_t;
 
+// Define a token structure
+typedef struct {
+    token_type_t type; // Token type
+    char *text;        // Token text
+} token_t;
 
-struct token_t {
-    enum token_type_t type; 
-    char* text;
-};
+// Function declarations
+token_t *create_token(token_type_t type, const char *text);
+void free_token(token_t *token);
 
-
-struct token_t* create_token(enum token_type_t type, const char* text);
-void free_token(struct token_t* token);
-enum token_type_t classify_token(const char* text);
-struct token_t* get_next_token(FILE* stream);
-
-#endif 
+#endif /* TOKEN_H */
