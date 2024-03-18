@@ -6,7 +6,6 @@
 
 #define MAX_LINE_LENGTH 256
 
-// Function to perform arithmetic operations
 int perform_operation(int operand1, int operand2, token_type_t operator_type) {
     switch (operator_type) {
         case ADDITION:
